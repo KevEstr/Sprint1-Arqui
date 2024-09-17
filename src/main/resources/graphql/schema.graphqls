@@ -1,0 +1,59 @@
+# Queries
+type Query {
+    getTransactionById(id: ID!): Transaction
+    getPaymentById(id: ID!): Payment
+    allPaymentMethods: [PaymentMethod!]!
+    allGatewayPaymentMethods: [GatewayPaymentMethod!]!
+
+}
+
+# Mutations
+type Mutation {
+    createTransaction(bookingId: ID!, paymentMethodId: ID!, totalPrice: Int!, additionalCharge: Float): Transaction
+    updateTransactionStatus(id: ID!, status: String!): Transaction
+    createPayment(transactionId: ID!, totalPaid: Int!, gatewayPaymentId: Int): Payment
+    processPayment(transactionId: ID!, totalPaid: Int!, gatewayPaymentId: Int): Payment
+}
+
+# Types
+type Transaction {
+    id: ID!
+    status: String!
+    date: String!
+    totalPrice: Int!
+    additionalCharge: Float
+    booking: Booking
+    paymentMethod: PaymentMethod
+    payments: [Payment!]!
+}
+
+type Payment {
+    id: ID!
+    paymentDate: String!
+    totalPaid: Int!
+    transaction: Transaction
+    gatewayPaymentId: Int
+    paymentStatus: PaymentStatus!
+}
+
+enum PaymentStatus {
+    PENDING
+    SUCCESS
+    FAILED
+}
+
+type Booking {
+    id: ID!
+    additional_charge: Int
+}
+
+type PaymentMethod {
+    id: ID!
+    name: String!
+
+}
+
+type GatewayPaymentMethod {
+    id: ID!
+    name: String!
+}
