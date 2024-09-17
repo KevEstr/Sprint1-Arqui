@@ -44,7 +44,9 @@ mvn spring-boot:run
 
 ### 4. Acceder a la Aplicación
 
-El backend estará corriendo en http://localhost:8080. Puedes acceder al Playground de GraphQL en la siguiente URL: http://localhost:8081/graphiql
+El backend estará corriendo en http://localhost:8080.
+
+Puedes acceder al Playground de GraphQL en la siguiente URL: http://localhost:8081/graphiql
 
 ### 5. 📂 Estructura del Proyecto
 
