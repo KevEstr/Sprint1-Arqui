@@ -48,6 +48,8 @@ El backend estará corriendo en http://localhost:8080. Puedes acceder al Playgro
 
 ### 5. 📂 Estructura del Proyecto
 
+```bash
+
 src/
 ├── main/
 │   ├── java/
