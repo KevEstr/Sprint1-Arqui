@@ -32,7 +32,6 @@ Este backend se conecta con una base de datos **PostgreSQL** y está diseñado p
 
 Primero, clona este repositorio en tu máquina local:
 
-```bash
 git clone https://github.com/KevEstr/Sprint1-Arqui
 
 ### 2. Configurar la Base de Datos
